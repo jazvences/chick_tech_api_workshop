@@ -13,10 +13,13 @@ $(document).ready(function(){
     console.log("call-api button was pressed");
 
     // call the API
-    var url = ""; // add your API's URL here!
+    var url = "https://api.nasa.gov/planetary/apod?api_key=B8UNxTRKr7FDWLcVDCYgJTpbr1Lpg6FnkpqGT2qE&date=2002-04-09"; // add your API's URL here!
     $.get(url, function(data, status){
         console.log("Data: " + data + "\nStatus: " + status);
         console.log(data);
+        $("img").attr("src", data.url);
+        $("p1").html(data.date);
+        $("p2").html(data.explanation);
         // do something cool with the data here!!!
     });
 
